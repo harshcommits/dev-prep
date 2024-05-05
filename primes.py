@@ -22,4 +22,4 @@ def check_for_prime(number):
 
 if __name__ == "__main__":
 
-    check_for_prime(10)
+    check_for_prime(10) # calling the function
