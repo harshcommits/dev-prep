@@ -6,6 +6,9 @@ the following code snippets detail out the variable scopes in different scenario
 def localCheck(num1, num2, operation='sum'):
     print(locals())
 
+def globalCheck(num1, num2, operation='multiply'):
+    print(globals())
+
 
 if __name__ == "__main__":
     localCheck(1, 3, 'multiply')
