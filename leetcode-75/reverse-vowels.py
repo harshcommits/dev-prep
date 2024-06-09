@@ -1,3 +1,4 @@
+# this solution sucks, but I came up with it so whatever
 def reverse_vowels(value):
     vowels = ['a', 'e', 'i', 'o', 'u']
 
@@ -28,9 +29,31 @@ def reverse_vowels(value):
 
     return "".join(temp_reverse_string)
 
+
+# This is the saner solution from github using two pointers
+def reverse_vowels_sanely(word):
+    vowels = "AEIOUaeiou"
+    i, j = 0, len(word) - 1
+    list_word = list(word)
+
+    while i < j:
+        while i < j and list_word[i] not in vowels:
+            i += 1
+        while i < j and list_word[j] not in vowels:
+            j -= 1
+        if i < j:
+            list_word[i], list_word[j] = list_word[j], list_word[i]
+            i, j = i + 1, j - 1
+
+    return "".join(list_word)
+
 if __name__ == "__main__":
-    final = reverse_vowels('hello') # works
-    final = reverse_vowels('leetcode')  # works
-    final = reverse_vowels('Aa')    # doesn't work since upper/lower case is treated the same; might need to incorporate ASCII
-    print(final)
+    final1 = reverse_vowels('hello') # works
+    final2 = reverse_vowels('leetcode')  # works
+    final3 = reverse_vowels('Aa')    # doesn't work since upper/lower case is treated the same; might need to incorporate ASCII
+    print(final3)
     # print(final)
+
+    # other function
+    final4 = reverse_vowels_sanely('Aa')
+    print(final4)
