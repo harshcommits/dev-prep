@@ -1,14 +1,40 @@
+import time
+
 # brute force method; efficiency is O(n2)
 def two_sum(values, sum):
     for i in range (0, len(values)-1):
         for j in range(i+1, len(values)-1):
             if values[i] +  values[j] == sum:
-                return f"The respective numbers are {values[i]} and {values[j]}"
+                return f"The values are {values[i]} and {values[j]}"
 
-    return "The values don't exist"
+    return "no such values exist"
+
+# the more optimized approach
+def two_sum_better(values, sum):
+    i, j = 0, len(values) - 1
+    while (i != j): # doesn't work with odd no. of values, misses the middle element because of logic flaw
+        if values[i] + values[j] == sum:
+            return f"The values are {values[i]} and {values[j]}"
+        
+        i+=1
+        j-=1
+
+    return "no such values exist"
 
 
 if __name__ == "__main__":
     
-    values = [1, 2, 4, 5, 67]
-    print(two_sum(values, 10))
+    values = [1, 2, 4, 5, 67, 3]
+
+    start = time.perf_counter()
+    print(two_sum(values, 4))
+    end = time.perf_counter()
+
+    print((end-start) * 10**6)
+
+    # start2 = time.perf_counter()
+    print(two_sum_better(values, 4))
+    # end2 = time.perf_counter()
+    
+    # print((end2-start2) * 10**6)
+
