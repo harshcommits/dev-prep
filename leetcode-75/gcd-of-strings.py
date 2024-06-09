@@ -8,9 +8,7 @@ def gcdOfStrings(str1, str2):
         n1, n2 = len1 // k, len2 // k
         base = str1[:k]
 
-        ## debug stuff
-        print(base)
-        print(str1 == n1 * base and str2 == n2 * base)
+        # print(str1 == n1 * base and str2 == n2 * base)
         return str1 == n1 * base and str2 == n2 * base
 
     for i in range(min(len1, len2), 0, -1):
@@ -20,5 +18,5 @@ def gcdOfStrings(str1, str2):
 
 
 if __name__ == "__main__":
-    # print(gcdOfStrings("ABABAB", "AB"))
+    print(gcdOfStrings("ABABAB", "AB"))
     print(gcdOfStrings("ABABAB", "CODE"))
