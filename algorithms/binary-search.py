@@ -12,9 +12,12 @@ def binary_search(values, value, low, high):
             return binary_search(values, value, low, mid - 1)
     
     else:
-        return f"Value doesn't exist"
+        return -1
 
 if __name__ == "__main__":
     values = [1, 2, 4, 5, 6]
-    result = binary_search(values, 5, 0, len(values))
-    print(f"The value is at {result}")
+    result = binary_search(values, 25, 0, len(values)-1)
+    if result == -1:
+        print("Value not in list")
+    else:
+        print("The value is at {result}")
