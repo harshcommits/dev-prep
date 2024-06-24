@@ -16,8 +16,8 @@ def two_sum_better(values, sum):
         if values[i] + values[j] == sum:
             return f"The better values are {values[i]} and {values[j]}"
         
-        i+=1
-        j-=1
+        i += 1
+        j -= 1
 
     return "no such values exist"
 
