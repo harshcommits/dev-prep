@@ -4,13 +4,10 @@ def bfs(graph, start, search_value):
     queue = deque([start])
 
     while queue:
-        print(f"queue: {queue}")
         vertex = queue.popleft()
-        print(vertex + "->")
         if vertex == search_value:
             return True
         visited.add(vertex)
-        print(f"visited: {visited}")
     
         for neighbour in graph[vertex]:
             if neighbour not in visited:
