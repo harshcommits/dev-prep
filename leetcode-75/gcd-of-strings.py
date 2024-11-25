@@ -16,7 +16,6 @@ def gcdOfStrings(str1, str2):
             return str1[:i] 
 
 
-
 if __name__ == "__main__":
     print(gcdOfStrings("ABABAB", "AB"))
     print(gcdOfStrings("ABABAB", "CODE"))
