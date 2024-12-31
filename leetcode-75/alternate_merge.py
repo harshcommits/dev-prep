@@ -1,4 +1,4 @@
-def alternate_merge(word1, word2):
+def mergeAlternately(word1, word2):
     i = j = 0
     result = ""
 
@@ -15,6 +15,22 @@ def alternate_merge(word1, word2):
 
     return result
 
+# another way to do it
+def mergeAlternatelyPartTwo(word1, word2):
+    merged = ""
+    w1 = len(word1)
+    w2 = len(word2)
+    l = min(w1, w2)
+    for i in range(l):
+        merged += word1[i] + word2[i]
+    if w1 == w2:
+        return merged
+    elif w1 > w2:
+        return merged + word1[l:]
+    elif w1 < w2:
+        return merged + word2[l:]
+
+
 if __name__ == "__main__":
-    values = alternate_merge("abc", "de")
+    values = mergeAlternately("abc", "de")
     print(values)
