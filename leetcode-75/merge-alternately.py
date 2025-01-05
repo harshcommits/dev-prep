@@ -1,5 +1,4 @@
 def mergeAlternately(word1, word2):
-    i = j = 0
     result = ""
 
     max_index = max(len(word1), len(word2))
@@ -32,5 +31,6 @@ def mergeAlternatelyPartTwo(word1, word2):
 
 
 if __name__ == "__main__":
-    values = mergeAlternately("abc", "de")
+    # values = mergeAlternately("abc", "de")
+    values = mergeAlternatelyPartTwo("abc", "de")
     print(values)
